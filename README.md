@@ -1,27 +1,70 @@
 # Clerk WP Sync
 
-Synchronize users between Clerk.com and WordPress - Growth by automation
+WordPress plugin to synchronize users between Clerk.com and WordPress. Designed to work seamlessly with Groundhogg CRM but can be used independently for basic Clerk user synchronization.
 
-## About
+## Features
 
-Developed by [Systemsaholic](https://systemsaholic.com), this plugin provides seamless user synchronization between Clerk.com and WordPress.
+- Automatic user creation when users sign up through Clerk
+- User profile updates sync from Clerk to WordPress
+- Configurable user deletion behavior
+- Customizable default user roles
+- Secure webhook implementation using SVIX
+- Integration with Groundhogg CRM (optional)
+  - Automatically assigns Sales Rep role when Groundhogg is active
+  - Syncs user data with Groundhogg contacts
+
+## Requirements
+
+- PHP 7.4 or higher
+- WordPress 5.8 or higher
+- Composer
+- Groundhogg CRM (optional, for enhanced CRM features)
 
 ## Installation
 
-1. Clone this repository to your WordPress plugins directory
+1. Clone this repository to your WordPress plugins directory:
+```bash
+cd wp-content/plugins
+git clone https://github.com/systemsaholic/clerk-wp-sync.git
+```
+
 2. Install dependencies:
-   ```bash
-   cd wp-content/plugins/clerk-wp-sync
-   composer install
-   ```
+```bash
+cd clerk-wp-sync
+composer install
+```
+
 3. Activate the plugin in WordPress admin
-4. Configure your Clerk webhook settings
+4. Configure your Clerk webhook settings:
+   - Add your Webhook Secret
+   - Add your Clerk API Key
+   - Configure the webhook URL in your Clerk dashboard
 
-## Support
+## Configuration
 
-For support, please contact:
-- Website: [systemsaholic.com](https://systemsaholic.com)
-- Author: Al Guertin
+1. Go to Settings > Clerk WP Sync
+2. Enter your Clerk Webhook Secret
+3. Enter your Clerk API Key
+4. Configure default user role:
+   - With Groundhogg: Defaults to Sales Rep role
+   - Without Groundhogg: Defaults to Subscriber role
+5. Configure deletion behavior
+6. Save settings
+
+## Integration with Groundhogg
+
+When Groundhogg is active, the plugin will:
+- Set new users' role to "Sales Rep" by default
+- Maintain consistency with Groundhogg's user role system
+- Enable seamless integration between Clerk authentication and Groundhogg CRM
+
+## Standalone Usage
+
+Without Groundhogg, the plugin functions as a standard Clerk-WordPress synchronization tool:
+- Creates WordPress users from Clerk signups
+- Keeps user data in sync between platforms
+- Manages user deletion/unlinking
+- Configurable default roles and behaviors
 
 ## License
 
