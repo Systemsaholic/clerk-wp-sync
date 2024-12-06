@@ -22,23 +22,15 @@ WordPress plugin to synchronize users between Clerk.com and WordPress. Designed 
 
 ## Installation
 
-1. Clone this repository to your WordPress plugins directory:
-```bash
-cd wp-content/plugins
-git clone https://github.com/systemsaholic/clerk-wp-sync.git
-```
+### Option 1: Direct Download (Recommended for Production)
+1. Download the latest release from the [releases page](https://github.com/systemsaholic/clerk-wp-sync/releases)
+2. Upload and activate through WordPress admin
+3. Configure plugin settings
 
-2. Install dependencies:
-```bash
-cd clerk-wp-sync
-composer install
-```
-
-3. Activate the plugin in WordPress admin
-4. Configure your Clerk webhook settings:
-   - Add your Webhook Secret
-   - Add your Clerk API Key
-   - Configure the webhook URL in your Clerk dashboard
+### Option 2: Development Installation
+1. Clone the repository
+2. Run `composer install`
+3. Activate the plugin
 
 ## Configuration
 

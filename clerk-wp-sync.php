@@ -23,6 +23,20 @@ define('CLERK_WP_SYNC_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('CLERK_WP_SYNC_PLUGIN_URL', plugin_dir_url(__FILE__));
 define('CLERK_WP_SYNC_PLUGIN_BASENAME', plugin_basename(__FILE__));
 
+// Check for Composer autoloader
+if (!file_exists(CLERK_WP_SYNC_PLUGIN_DIR . 'vendor/autoload.php')) {
+    add_action('admin_notices', function() {
+        ?>
+        <div class="notice notice-error">
+            <p>
+                <?php _e('Clerk WP Sync: Missing dependencies. Please run <code>composer install</code> in the plugin directory or download the full release version.', 'clerk-wp-sync'); ?>
+            </p>
+        </div>
+        <?php
+    });
+    return;
+}
+
 require_once CLERK_WP_SYNC_PLUGIN_DIR . 'vendor/autoload.php';
 
 final class Clerk_WP_Sync_Plugin {
