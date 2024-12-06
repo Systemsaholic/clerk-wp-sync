@@ -1,0 +1,14 @@
+{
+    "name": "systemsaholic/clerk-wp-sync",
+    "description": "WordPress plugin to sync users between Clerk.com and WordPress - Growth by automation",
+    "type": "wordpress-plugin",
+    "require": {
+        "php": ">=7.4",
+        "svix/svix": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "ClerkWPSync\\": "includes/"
+        }
+    }
+} 
